@@ -37,10 +37,11 @@ theWebUI.redrawFilesRelocate = function(hash)
 				var sId = hash + "_f_" + i;
 				var file = this.files[hash][i];
 				file.percent = (file.size > 0) ? theConverter.round((file.done/file.size)*100,1): "100.0";
+				file.relocate = "bla";
 				if(this.settings["webui.fls.view"])
 				{
 				if(!$type(table.rowdata[sId])) 
-							table.addRowById(file, sId, file.icon, file.attr, {relocate:"bla"});
+							table.addRowById(file, sId, file.icon, file.attr);
 						else
 						{
 							for(var j in file) 
