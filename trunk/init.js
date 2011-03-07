@@ -6,7 +6,7 @@ theWebUI.tables.relocate =
 	columns:
 	[
 		{ text: theUILang.Name, 			width: "300px",	id: "name",			type: TYPE_STRING },
-		{ text: theUILang.Relocate, 		width: "300px",	id: "relocate",		type: TYPE_STRING }
+		{ text: theUILang.Relocate, 		width: "100px",	id: "relocate",		type: TYPE_STRING }
 	],
 	container:	"RelocateFileList",
 	format:		theFormatter.files,
@@ -38,7 +38,6 @@ theWebUI.redrawFilesRelocate = function(hash)
 				var file = this.files[hash][i];
 				file.percent = (file.size > 0) ? theConverter.round((file.done/file.size)*100,1): "100.0";
 				file.relocate = "bla";
-				console.debug(file);
 				if(this.settings["webui.fls.view"])
 				{
 				if(!$type(table.rowdata[sId])) 
