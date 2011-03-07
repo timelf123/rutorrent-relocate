@@ -5,8 +5,7 @@ theWebUI.tables.relocate =
 	obj: new dxSTable(),
 	columns:
 	[
-		{ text: theUILang.Name, 			width: "300px",	id: "name",		type: TYPE_STRING },
-		{ text: theUILang.Relocate, 			width: "300px",	id: "relocate",		type: TYPE_STRING 	text:"relocate"}
+		{ text: theUILang.Name, 			width: "300px",	id: "name",		type: TYPE_STRING }
 	],
 	container:	"RelocateFileList",
 	format:		theFormatter.files,
