@@ -5,27 +5,32 @@ if(plugin.enabled)
 	if(plugin.canChangeMenu())
 	{
 		plugin.createFileMenu = theWebUI.createFileMenu;
-		theWebUI.createFileMenu = function( e, id )
+		theWebUI.createFileMenu = function( e, id ) 
 		{
-			if(plugin.enabled)
+			if(plugin.createFileMenu.call(this, e, id)) 
 			{
-				theContextMenu.add([CMENU_SEP]);
-				var fno = null;
-				var table = this.getTable("fls");
-				if((table.selCount == 1)  && (theWebUI.dID.length==40))
+				if(plugin.enabled) 
 				{
-					var fid = table.getFirstSelected();
-					if(this.settings["webui.fls.view"])
+					theContextMenu.add([CMENU_SEP]);
+					var fno = null;
+					var table = this.getTable("fls");
+					if((table.selCount == 1)  && (theWebUI.dID.length==40))
 					{
-						var arr = fid.split('_f_');
-						fno = arr[1];
+						var fid = table.getFirstSelected();
+						if(this.settings["webui.fls.view"])
+						{
+							var arr = fid.split('_f_');
+							fno = arr[1];
+						}
+						else
+						if(!this.dirs[this.dID].isDirectory(fid))
+							fno = fid.substr(3);
 					}
-					else
-					if(!this.dirs[this.dID].isDirectory(fid))
-						fno = fid.substr(3);
+					theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : "theWebUI.dummy('" + theWebUI.dID + "')"] );
 				}
-				theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : "theWebUI.dummy('" + theWebUI.dID + "')"] );
+				return(true);
 			}
+			return(false);
 		}
 	}
 	
