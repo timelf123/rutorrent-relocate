@@ -25,7 +25,7 @@ if(plugin.enabled)
 					if(!this.dirs[this.dID].isDirectory(fid))
 						fno = fid.substr(3);
 				}
-					theContextMenu.add( el, [theUILang.Relocate+"...", "theWebUI.dummy('" + theWebUI.dID + "')"]);
+				theContextMenu.add( [theUILang.Relocate+"...", "theWebUI.dummy('" + theWebUI.dID + "')"]);
 			}
 		}
 	}
