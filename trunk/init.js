@@ -7,7 +7,6 @@ if(plugin.enabled)
 		plugin.createFileMenu = theWebUI.createFileMenu;
 		theWebUI.createFileMenu = function( e, id )
 		{
-			plugin.createFileMenu.call(this, e, id);
 			if(plugin.enabled)
 			{
 				theContextMenu.add([CMENU_SEP]);
@@ -25,7 +24,7 @@ if(plugin.enabled)
 					if(!this.dirs[this.dID].isDirectory(fid))
 						fno = fid.substr(3);
 				}
-				theContextMenu.add( [theUILang.Relocate+"...", "theWebUI.dummy('" + theWebUI.dID + "')"]);
+				theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : "theWebUI.dummy('" + theWebUI.dID + "')"] );
 			}
 		}
 	}
