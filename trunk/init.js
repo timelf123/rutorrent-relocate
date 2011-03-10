@@ -48,12 +48,8 @@ plugin.onLangLoaded = function()
 		"<div class='cont fxcaret'>" +
 			"<fieldset>" +
 				"<label id='lbl_relocate' for='edit_relocate'>" + theUILang.Relocate + ": </label>" +
-				"<input type='text' id='edit_relocate' class='TextboxLarge' maxlength='200'/>" +
+				"<input type='file' name='edit_relocate' id='edit_relocate' class='TextboxLarge'>"+
 				"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
-				"<div class='checkbox'>" +
-					"<input type='checkbox' id='relocate_datafiles'/>"+
-					"<label for='relocate_datafiles'>"+ theUILang.RelocateMove +"</label>"+
-				"</div>" +
 			"</fieldset>" +
 		"</div>"+
 		"<div class='aright buttons-list'>" +
@@ -61,16 +57,6 @@ plugin.onLangLoaded = function()
 				" onclick='theWebUI.sendRelocate(); return(false);' />" +
 			"<input type='button' value='"+ theUILang.Cancel + "' class='Cancel Button'/>" +
 		"</div>", true);
-	if(thePlugins.isInstalled("_getdir"))
-	{
-		var btn = new theWebUI.rDirBrowser( 'dlg_relocate', 'edit_relocate', 'btn_relocate_browse', 'frame_relocate_browse' );
-		theDialogManager.setHandler('dlg_relocate','afterHide',function()
-		{
-			btn.hide();
-		});
-	}
-	else
-		$('#btn_relocate_browse').remove();
 }
 
 plugin.onRemove = function()
