@@ -48,8 +48,8 @@ plugin.onLangLoaded = function()
 		"<div class='cont fxcaret'>" +
 			"<fieldset>" +
 				"<label id='lbl_relocate' for='edit_relocate'>" + theUILang.Relocate + ": </label>" +
-				"<input type='file' name='edit_relocate' id='edit_relocate' class='TextboxLarge'>"+
-				"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
+				"<input type='file' name='edit_relocate' id='edit_relocate' class='TextboxLarge' size='42'>"+
+				"/*<input type='button' id='btn_relocate_browse' class='Button' value='...' />*/" +
 			"</fieldset>" +
 		"</div>"+
 		"<div class='aright buttons-list'>" +
