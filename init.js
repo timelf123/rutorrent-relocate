@@ -47,8 +47,8 @@ plugin.onLangLoaded = function()
 	theDialogManager.make( 'dlg_relocate', theUILang.RelocateDlgCaption,
 		"<div class='cont fxcaret'>" +
 			"<fieldset>" +
-				"<label id='lbl_relocate' for='edit_relocate'>" + theUILang.Relocate + ": </label>" +
-				"<input type='file' name='edit_relocate' id='edit_relocate' class='TextboxLarge' size='42'>"+
+				"<label id='lbl_relocate' for='relocate'>" + theUILang.Relocate + ": </label>" +
+				"<input type='file' name='relocate' id='relocate' class='TextboxLarge' size='42'>"+
 				"<!--<input type='button' id='btn_relocate_browse' class='Button' value='...' />-->" +
 			"</fieldset>" +
 		"</div>"+
