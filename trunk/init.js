@@ -94,7 +94,8 @@ plugin.onLangLoaded = function()
 			"<form action='plugins/relocate/action.php' id='frmRelocate' method='post'>"+
 				"<fieldset>" +
 					"<label id='lbl_relocate' for='rel_destination'>" + theUILang.Relocate + ": </label>" +
-					"<input type='file' name='rel_destination' id='rel_destination' class='TextboxLarge' size='42'>"+
+					"<input type='text' name='rel_destination' id='rel_destination' class='TextboxLarge' size='42'>"+
+					"<input type='button' id='btn_rel_destination_browse' class='Button' value='...' />" +
 					"<input type='hidden' name='rel_id' id='rel_id' class='TextboxLarge' size='42'>"+
 					"<input type='hidden' name='rel_fno' id='rel_fno' class='TextboxLarge' size='42'>"+
 				"</fieldset>" +
@@ -105,6 +106,16 @@ plugin.onLangLoaded = function()
 				" onclick='theWebUI.submit(); return(false);' />" +
 			"<input type='button' value='"+ theUILang.Cancel + "' class='Cancel Button'/>" +
 		"</div>", true);
+	if(thePlugins.isInstalled("_getdir"))
+	{
+		var btn = new theWebUI.rDirBrowser( 'dlg_relocate', 'rel_destination', 'btn_rel_destination_browse', null,true );
+		theDialogManager.setHandler('dlg_relocate','afterHide',function()
+		{
+			btn.hide();
+		});
+	}
+	else
+		$('#btn_rel_destination_browse').remove();
 }
 
 plugin.onRemove = function()
