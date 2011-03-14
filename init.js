@@ -55,7 +55,7 @@ if(plugin.enabled)
 		log(base_path);
 	}
 	
-	theWebUI.submit = function()
+	theWebUI.sendRelocate = function()
 	{
 			
 		var id = $('#rel_id').val();
@@ -92,19 +92,17 @@ plugin.onLangLoaded = function()
 {
 	theDialogManager.make( 'dlg_relocate', theUILang.RelocateDlgCaption,
 		"<div class='cont fxcaret'>" +
-			"<form action='plugins/relocate/action.php' id='frmRelocate' method='post'>"+
-				"<fieldset>" +
-					"<label id='lbl_relocate' for='rel_destination'>" + theUILang.RelocateFrmCaption + ": </label>" +
-					"<input type='text' name='rel_destination' id='rel_destination' class='TextboxLarge' maxlength='200' />"+
-					"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
-					"<input type='hidden' name='rel_id' id='rel_id' />"+
-					"<input type='hidden' name='rel_fno' id='rel_fno' />"+
-				"</fieldset>" +
-			"</form>" +
+			"<fieldset>" +
+				"<label id='lbl_relocate' for='rel_destination'>" + theUILang.RelocateFrmCaption + ": </label>" +
+				"<input type='text' name='rel_destination' id='rel_destination' class='TextboxLarge' maxlength='200' />"+
+				"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
+				"<input type='hidden' name='rel_id' id='rel_id' />"+
+				"<input type='hidden' name='rel_fno' id='rel_fno' />"+
+			"</fieldset>" +
 		"</div>"+
 		"<div class='aright buttons-list'>" +
 			"<input type='button' value='" + theUILang.ok + "' class='OK Button' id='btn_relocate_ok'" +
-				" onclick='theWebUI.submit(); return(false);' />" +
+				" onclick='theWebUI.sendRelocate(); return(false);' />" +
 			"<input type='button' value='"+ theUILang.Cancel + "' class='Cancel Button'/>" +
 		"</div>", true);
 	if(thePlugins.isInstalled("_getdir"))
