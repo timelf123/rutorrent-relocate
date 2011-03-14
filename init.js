@@ -26,7 +26,7 @@ if(plugin.enabled)
 						if(!this.dirs[this.dID].isDirectory(fid))
 							fno = fid.substr(3);
 					}
-					theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : "theWebUI.showRelocateDlg('" + theWebUI.dID + "','" + fno + "')"] );
+					theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : function() {theWebUI.showRelocateDlg('" + theWebUI.dID + "','" + fno + "');}] );
 				}
 				return(true);
 			}
