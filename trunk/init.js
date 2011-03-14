@@ -26,7 +26,7 @@ if(plugin.enabled)
 						if(!this.dirs[this.dID].isDirectory(fid))
 							fno = fid.substr(3);
 					}
-					theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : "theWebUI.dummy('" + theWebUI.dID + "')"] );
+					theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : "theWebUI.dummy('" + theWebUI.dID + "','" + fno + "')"] );
 				}
 				return(true);
 			}
@@ -34,15 +34,32 @@ if(plugin.enabled)
 		}
 	}
 	
-	theWebUI.dummy = function(dID)
+	theWebUI.dummy = function(dID,fno)
 	{
 		theDialogManager.show( "dlg_relocate" );
-		log(theWebUI.dID);
+		log(dID);
+		log(fno);
 	}
 	
 	theWebUI.submit = function()
 	{
-		document.forms["frmRelocate"].submit();
+		var AjaxReq = jQuery.ajax({
+			type: "POST",
+			timeout: theWebUI.settings["webui.reqtimeout"],
+			async : true,
+			cache: false,
+			data: "hash="+ hash +"&no="+ no,
+			url : "plugins/relocate/action.php"/*,
+			success: function(data){
+				if (data == '') {
+					theDialogManager.hide("dlg_info");
+					askYesNo( theUILang.mediaError, theUILang.badMediaData, "" );
+					return;
+				}
+				$("#media_info").html(data);
+				theDialogManager.center("dlg_info");
+			}*/
+		});
 	}
 	
 }
@@ -55,7 +72,6 @@ plugin.onLangLoaded = function()
 				"<fieldset>" +
 					"<label id='lbl_relocate' for='relocate'>" + theUILang.Relocate + ": </label>" +
 					"<input type='file' name='relocate' id='relocate' class='TextboxLarge' size='42'>"+
-					"<!--<input type='button' id='btn_relocate_browse' class='Button' value='...' />-->" +
 				"</fieldset>" +
 			"</form>" +
 		"</div>"+
