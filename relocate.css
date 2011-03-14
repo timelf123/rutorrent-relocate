@@ -8,6 +8,6 @@ div#dlg_relocate input {vertical-align: middle; margin-top: 5px; margin-bottom: 
 
 div#dlg_relocate br {clear: left; line-height: 0}
 
-#btn_datadir_browse {width:30px}
+#btn_relocate_browse {width:30px}
 
 div#dlg_relocate div.dlg-header {background-image: url(../../images/settings.gif)}
