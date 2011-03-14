@@ -1,3 +1,4 @@
+plugin.loadMainCSS();
 plugin.loadLang();
 
 if(plugin.enabled)
