@@ -40,7 +40,7 @@ if(plugin.enabled)
 		log(dID);
 		log(fno);
 		var base_path = $.trim(this.torrents[dID].base_path);
-		if (this.files[dID][fno].name)
+		if (this.files[dID][fno].name && this.files[dID][fno].name != this.torrents[dID].name)
 			base_path = base_path + "/" + this.files[dID][fno].name;
 		log(base_path);
 	}
