@@ -40,22 +40,9 @@ if(plugin.enabled)
 		log(theWebUI.dID);
 	}
 	
-	theWebUI.sendRelocate = function()
+	theWebUI.submit = function()
 	{
-		var sr = this.getTable("fls").rowSel;
-		for( var k in sr )
-		{
-			if( sr[k] && (k.length==40))
-			{
-				this.DataDirID = k;
-				this.requestWithTimeout( "?action=setdatadir", [this.receiveDataDir, this], function()
-				{
-					theWebUI.timeout();
-					$('#btn_datadir_ok').attr("disabled",false);
-				});
-			}
-		}
-
+		document.forms["frmRelocate"].submit();
 	}
 	
 }
@@ -64,7 +51,7 @@ plugin.onLangLoaded = function()
 {
 	theDialogManager.make( 'dlg_relocate', theUILang.RelocateDlgCaption,
 		"<div class='cont fxcaret'>" +
-			"<form action='plugins/relocate/action.php' id='getdata' method='post'>"+
+			"<form action='plugins/relocate/action.php' id='frmRelocate' method='post'>"+
 				"<fieldset>" +
 					"<label id='lbl_relocate' for='relocate'>" + theUILang.Relocate + ": </label>" +
 					"<input type='file' name='relocate' id='relocate' class='TextboxLarge' size='42'>"+
