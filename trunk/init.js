@@ -36,6 +36,7 @@ if(plugin.enabled)
 	
 	theWebUI.dummy = function(dID,fno)
 	{
+		//document.forms['frmRelocate'].elements[].value
 		theDialogManager.show( "dlg_relocate" );
 		log(dID);
 		log(fno);
@@ -76,6 +77,8 @@ plugin.onLangLoaded = function()
 				"<fieldset>" +
 					"<label id='lbl_relocate' for='relocate'>" + theUILang.Relocate + ": </label>" +
 					"<input type='file' name='relocate' id='relocate' class='TextboxLarge' size='42'>"+
+					"<input type='hidden' name='id' id='id' class='TextboxLarge' size='42'>"+
+					"<input type='hidden' name='fno' id='fno' class='TextboxLarge' size='42'>"+
 				"</fieldset>" +
 			"</form>" +
 		"</div>"+
