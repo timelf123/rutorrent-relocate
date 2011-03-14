@@ -26,7 +26,7 @@ if(plugin.enabled)
 						if(!this.dirs[this.dID].isDirectory(fid))
 							fno = fid.substr(3);
 					}
-					theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : "theWebUI.dummy('" + theWebUI.dID + "','" + fno + "')"] );
+					theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : "theWebUI.showRelocateDlg('" + theWebUI.dID + "','" + fno + "')"] );
 				}
 				return(true);
 			}
@@ -34,15 +34,23 @@ if(plugin.enabled)
 		}
 	}
 	
-	theWebUI.dummy = function(dID,fno)
+	theWebUI.showRelocateDlg = function(dID,fno)
 	{
-		//document.forms['frmRelocate'].elements[].value
+		//document.forms['frmRelocate'].elements['id'].value = dID;
+		//document.forms['frmRelocate'].elements['fno'].value = fno;
+		$('#rel_id').val(dID);
+		$('#rel_fno').val(fno);
+			
 		theDialogManager.show( "dlg_relocate" );
+		
 		log(dID);
 		log(fno);
+		
 		var base_path = $.trim(this.torrents[dID].base_path);
+		
 		if (this.files[dID][fno].name && this.files[dID][fno].name != this.torrents[dID].name)
 			base_path = base_path + "/" + this.files[dID][fno].name;
+		
 		log(base_path);
 	}
 	
@@ -75,10 +83,10 @@ plugin.onLangLoaded = function()
 		"<div class='cont fxcaret'>" +
 			"<form action='plugins/relocate/action.php' id='frmRelocate' method='post'>"+
 				"<fieldset>" +
-					"<label id='lbl_relocate' for='relocate'>" + theUILang.Relocate + ": </label>" +
-					"<input type='file' name='relocate' id='relocate' class='TextboxLarge' size='42'>"+
-					"<input type='hidden' name='id' id='id' class='TextboxLarge' size='42'>"+
-					"<input type='hidden' name='fno' id='fno' class='TextboxLarge' size='42'>"+
+					"<label id='lbl_relocate' for='rel_destination'>" + theUILang.Relocate + ": </label>" +
+					"<input type='file' name='rel_destination' id='rel_destination' class='TextboxLarge' size='42'>"+
+					"<input type='hidden' name='rel_id' id='rel_id' class='TextboxLarge' size='42'>"+
+					"<input type='hidden' name='rel_fno' id='rel_fno' class='TextboxLarge' size='42'>"+
 				"</fieldset>" +
 			"</form>" +
 		"</div>"+
