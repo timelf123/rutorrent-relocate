@@ -61,7 +61,7 @@ plugin.onLangLoaded = function()
 		"</div>"+
 		"<div class='aright buttons-list'>" +
 			"<input type='button' value='" + theUILang.ok + "' class='OK Button' id='btn_relocate_ok'" +
-				" onclick='theWebUI.sendRelocate(); return(false);' />" +
+				" onclick='theWebUI.submit(); return(false);' />" +
 			"<input type='button' value='"+ theUILang.Cancel + "' class='Cancel Button'/>" +
 		"</div>", true);
 }
