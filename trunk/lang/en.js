@@ -1,4 +1,4 @@
-﻿theUILang.RelocateMenuCaption		= "Relocate Files...";
+﻿theUILang.RelocateMenuCaption		= "Relocate Files";
 theUILang.RelocateDlgCaption		= "Relocate Files";
 theUILang.RelocateFrmCaption		= "Destination:";
 
