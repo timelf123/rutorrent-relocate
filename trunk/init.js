@@ -62,11 +62,16 @@ if(plugin.enabled)
 		var dest = $('#rel_destination').val();
 		
 		var AjaxReq = jQuery.ajax({
-			type: "GET",
+			type: "POST",
 			timeout: theWebUI.settings["webui.reqtimeout"],
 			async : true,
 			cache: false,
-			data: "id="+ id +"&fno="+ fno + "&dest=" + dest,
+			//data: "id="+ id +"&fno="+ fno + "&dest=" + dest,
+			data: {
+					id:id,
+					fno:fno,
+					dest:dest
+				},
 			url : "plugins/relocate/action.php"/*,
 			success: function(data){
 				if (data == '') {
