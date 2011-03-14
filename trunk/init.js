@@ -39,6 +39,9 @@ if(plugin.enabled)
 		theDialogManager.show( "dlg_relocate" );
 		log(dID);
 		log(fno);
+		var base_path = $.trim(this.torrents[dID].base_path);
+		base_path = base_path + this.files[dID].name
+		log(base_path);
 	}
 	
 	theWebUI.submit = function()
