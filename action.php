@@ -1,5 +1,5 @@
 <?php
-require_once( '../../php/xmlrpc.php' );
+/*require_once( '../../php/xmlrpc.php' );
 
 eval( getPluginConf( 'relocate' ) );
 
@@ -26,5 +26,10 @@ function relocate() {
 	}
 return false;
 }
-echo relocate();
+echo relocate();*/
+
+	echo $_REQUEST['id'];
+	echo $_REQUEST['fno'];
+	echo $_REQUEST['dest'];
+	
 ?>

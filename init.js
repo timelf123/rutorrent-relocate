@@ -56,12 +56,17 @@ if(plugin.enabled)
 	
 	theWebUI.submit = function()
 	{
+			
+		var id = $('#rel_id').val();
+		var fno = $('#rel_fno').val();
+		var dest = $('#rel_destination').val();
+		
 		var AjaxReq = jQuery.ajax({
-			type: "POST",
+			type: "GET",
 			timeout: theWebUI.settings["webui.reqtimeout"],
 			async : true,
 			cache: false,
-			data: "hash="+ hash +"&no="+ no,
+			data: "id="+ id +"&fno="+ fno + "&dest=" + dest,
 			url : "plugins/relocate/action.php"/*,
 			success: function(data){
 				if (data == '') {
