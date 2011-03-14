@@ -27,7 +27,7 @@ if(plugin.enabled)
 						if(!this.dirs[this.dID].isDirectory(fid))
 							fno = fid.substr(3);
 					}
-					theContextMenu.add( [theUILang.Relocate+"...",  (fno==null) ? null : function() {theWebUI.showRelocateDlg(theWebUI.dID ,fno);}] );
+					theContextMenu.add( [theUILang.RelocateMenuCaption,  (fno==null) ? null : function() {theWebUI.showRelocateDlg(theWebUI.dID ,fno);}] );
 				}
 				return(true);
 			}
@@ -94,7 +94,7 @@ plugin.onLangLoaded = function()
 		"<div class='cont fxcaret'>" +
 			"<form action='plugins/relocate/action.php' id='frmRelocate' method='post'>"+
 				"<fieldset>" +
-					"<label id='lbl_relocate' for='rel_destination'>" + theUILang.Relocate + ": </label>" +
+					"<label id='lbl_relocate' for='rel_destination'>" + theUILang.RelocateFrmCaption + ": </label>" +
 					"<input type='text' name='rel_destination' id='rel_destination' class='TextboxLarge' maxlength='200'>"+
 					"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
 					"<input type='hidden' name='rel_id' id='rel_id'>"+
