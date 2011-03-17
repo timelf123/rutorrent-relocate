@@ -107,7 +107,8 @@ plugin.onLangLoaded = function()
 		"</div>", true);
 	if(thePlugins.isInstalled("_getdir"))
 	{
-		var btn = new theWebUI.rDirBrowser( 'dlg_relocate', 'rel_destination', 'btn_relocate_browse', null,true );
+		//var btn = new theWebUI.rDirBrowser( 'dlg_relocate', 'rel_destination', 'btn_relocate_browse', 'frame_relocate_browse',true );
+		var btn = new theWebUI.rDirBrowser( 'dlg_relocate', 'rel_destination', 'btn_relocate_browse', null,false );
 		theDialogManager.setHandler('dlg_relocate','afterHide',function()
 		{
 			btn.hide();
