@@ -1,4 +1,4 @@
-div#dlg_relocate {width: 310px; height: 200px; overflow: visible}
+div#dlg_relocate {width: 310px; height: 255px; overflow: visible}
 
 div#dlg_relocate fieldset div {line-height: 16px}
 div#dlg_relocate fieldset div.props-spacer {width: 90%; float: left}

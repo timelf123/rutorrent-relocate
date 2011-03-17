@@ -58,11 +58,9 @@ if(plugin.enabled)
 			
 		var id 		= $('#rel_id').val();
 		var fno 	= $('#rel_fno').val();
-		
 		var dest 	= $('#rel_destination').val();
-		//dest 		= $.trim(dest).replace(/\'/g, "\\'")
-		//dest 		= $.trim(dest).replace(/\s/g, "\\'")
 		var sourc	= $('#rel_source').val();
+		var force	= $('#rel_force').val();
 		
 		var AjaxReq = jQuery.ajax({
 			type: "POST",
@@ -74,7 +72,8 @@ if(plugin.enabled)
 					id:id,
 					fno:fno,
 					dest:dest,
-					sourc:sourc
+					sourc:sourc,
+					force:force
 				},
 			url : "plugins/relocate/action.php"/*,
 			success: function(data){
