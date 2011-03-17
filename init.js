@@ -64,7 +64,7 @@ if(plugin.enabled)
 		
 		if (dest == "") {
 			
-			$('#debug').html(theUILang.RelocateEmptyDest);
+			$('#rel_debug').html(theUILang.RelocateEmptyDest);
 			
 		}else{
 		
