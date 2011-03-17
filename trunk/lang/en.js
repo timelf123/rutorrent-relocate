@@ -1,5 +1,6 @@
-﻿theUILang.RelocateMenuCaption		= "Relocate Files";
+﻿theUILang.RelocateMenuCaption		= "Relocate...";
 theUILang.RelocateDlgCaption		= "Relocate Files";
-theUILang.RelocateFrmCaption		= "Destination";
+theUILang.RelocateFrmDestCaption	= "Destination";
+theUILang.RelocateFrmSourCaption	= "Source";
 
 thePlugins.get("relocate").langLoaded();
