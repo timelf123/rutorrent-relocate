@@ -30,6 +30,6 @@ echo relocate();*/
 
 	echo $_REQUEST['id'];
 	echo $_REQUEST['fno'];
-	echo $_REQUEST['dest'];
+	echo escapeshellarg($_REQUEST['dest']);
 	
 ?>
