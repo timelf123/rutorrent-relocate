@@ -95,7 +95,7 @@ plugin.onLangLoaded = function()
 			"<fieldset>" +
 				//"<label id='lbl_relocate' for='path_edit'>" + theUILang.RelocateFrmCaption + ": </label>" +
 				"<legend>"+theUILang.RelocateFrmCaption+"</legend>"+
-				"<input type='text' name='path_edit' id='path_edit' class='TextboxLarge' maxlength='200' autocomplete='off' />"+
+				"<input type='text' id='path_edit' name='path_edit' class='TextboxLarge' autocomplete='off'/>"+
 				"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
 				"<input type='hidden' name='rel_id' id='rel_id' />"+
 				"<input type='hidden' name='rel_fno' id='rel_fno' />"+
