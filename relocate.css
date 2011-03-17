@@ -14,4 +14,4 @@ div#dlg_relocate div.dlg-header {background-image: url(../../images/settings.gif
 
 div#dlg_relocate div.debug {height: auto; max-height: 50px; color:red;}
 
-div#dlg_relocate .Imput {width: 360px; min-height: 200px;}
+div#dlg_relocate .RelFields {width: 360px; min-height: 200px;}
