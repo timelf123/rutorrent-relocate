@@ -62,7 +62,7 @@ if(plugin.enabled)
 		var sourc	= $('#rel_source').val();
 		var force	= $('#rel_force').val();
 		
-		if (dest == null) {
+		if (dest == "") {
 			
 			$('#debug').html(theUILang.RelocateEmptyDest);
 			
