@@ -93,7 +93,8 @@ plugin.onLangLoaded = function()
 	theDialogManager.make( 'dlg_relocate', theUILang.RelocateDlgCaption,
 		"<div class='cont fxcaret'>" +
 			"<fieldset>" +
-				"<label id='lbl_relocate' for='path_edit'>" + theUILang.RelocateFrmCaption + ": </label>" +
+				//"<label id='lbl_relocate' for='path_edit'>" + theUILang.RelocateFrmCaption + ": </label>" +
+				"<legend>"+theUILang.RelocateFrmCaption+"</legend>"+
 				"<input type='text' name='path_edit' id='path_edit' class='TextboxLarge' maxlength='200' autocomplete='off' />"+
 				"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
 				"<input type='hidden' name='rel_id' id='rel_id' />"+
