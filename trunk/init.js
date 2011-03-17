@@ -108,11 +108,11 @@ plugin.onLangLoaded = function()
 		"<div class='cont fxcaret'>" +
 			"<fieldset>" +
 				"<legend>"+theUILang.RelocateFrmSoure+"</legend>"+
-				"<input type='text' id='rel_source' name='rel_source' class='TextboxLarge Imput' autocomplete='off' readonly='true' />"+
+				"<input type='text' id='rel_source' name='rel_source' class='TextboxLarge RelFields' autocomplete='off' readonly='true' />"+
 			"</fieldset>" +
 			"<fieldset>" +
 				"<legend>"+theUILang.RelocateFrmDestination+"</legend>"+
-				"<input type='text' id='rel_destination' name='rel_destination' class='TextboxLarge Imput' autocomplete='off' readonly='true'/>"+
+				"<input type='text' id='rel_destination' name='rel_destination' class='TextboxLarge RelFields' autocomplete='off' readonly='true'/>"+
 				"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
 				"<input type='hidden' name='rel_id' id='rel_id' />"+
 				"<input type='hidden' name='rel_fno' id='rel_fno' />"+
