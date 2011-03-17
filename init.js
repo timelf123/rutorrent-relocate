@@ -62,30 +62,38 @@ if(plugin.enabled)
 		var sourc	= $('#rel_source').val();
 		var force	= $('#rel_force').val();
 		
-		var AjaxReq = jQuery.ajax({
-			type: "POST",
-			timeout: theWebUI.settings["webui.reqtimeout"],
-			async : true,
-			cache: false,
-			//data: "id="+ id +"&fno="+ fno + "&dest=" + dest,
-			data: {
-					id:id,
-					fno:fno,
-					dest:dest,
-					sourc:sourc,
-					force:force
-				},
-			url : "plugins/relocate/action.php"/*,
-			success: function(data){
-				if (data == '') {
-					theDialogManager.hide("dlg_info");
-					askYesNo( theUILang.mediaError, theUILang.badMediaData, "" );
-					return;
-				}
-				$("#media_info").html(data);
-				theDialogManager.center("dlg_info");
-			}*/
-		});
+		if (dest == null) {
+			
+			$('#debug').html(theUILang.RelocateEmptyDest);
+			
+		}else{
+		
+			var AjaxReq = jQuery.ajax({
+				type: "POST",
+				timeout: theWebUI.settings["webui.reqtimeout"],
+				async : true,
+				cache: false,
+				//data: "id="+ id +"&fno="+ fno + "&dest=" + dest,
+				data: {
+						id:id,
+						fno:fno,
+						dest:dest,
+						sourc:sourc,
+						force:force
+					},
+				url : "plugins/relocate/action.php"/*,
+				success: function(data){
+					if (data == '') {
+						theDialogManager.hide("dlg_info");
+						askYesNo( theUILang.mediaError, theUILang.badMediaData, "" );
+						return;
+					}
+					$("#media_info").html(data);
+					theDialogManager.center("dlg_info");
+				}*/
+			});
+	
+		}
 	}
 	
 }
@@ -111,7 +119,7 @@ plugin.onLangLoaded = function()
 			"</fieldset>" +
 			"<fieldset>" +
 				"<legend>"+theUILang.RelocateFrmDebug+"</legend>"+
-				"<div id='debug'></div>"+
+				"<div id='rel_debug' class='debug' ></div>"+
 			"</fieldset>" +
 		"</div>"+
 		"<div class='aright buttons-list'>" +
