@@ -62,11 +62,13 @@ if(plugin.enabled)
 		var sourc	= $('#rel_source').val();
 		var force	= $('#rel_force').val();
 		
-		if (dest == "") {
+		if (dest == "" || sourc == "") {
 			
 			$('#rel_debug').html(theUILang.RelocateEmptyDest);
 			
 		}else{
+			
+			$('#rel_debug').html('');
 		
 			var AjaxReq = jQuery.ajax({
 				type: "POST",
