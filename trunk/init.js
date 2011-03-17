@@ -93,8 +93,8 @@ plugin.onLangLoaded = function()
 	theDialogManager.make( 'dlg_relocate', theUILang.RelocateDlgCaption,
 		"<div class='cont fxcaret'>" +
 			"<fieldset>" +
-				"<label id='lbl_relocate' for='rel_destination'>" + theUILang.RelocateFrmCaption + ": </label>" +
-				"<input type='text' name='rel_destination' id='rel_destination' class='TextboxLarge' maxlength='200' autocomplete='off' />"+
+				"<label id='lbl_relocate' for='path_edit'>" + theUILang.RelocateFrmCaption + ": </label>" +
+				"<input type='text' name='path_edit' id='path_edit' class='TextboxLarge' maxlength='200' autocomplete='off' />"+
 				"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
 				"<input type='hidden' name='rel_id' id='rel_id' />"+
 				"<input type='hidden' name='rel_fno' id='rel_fno' />"+
@@ -108,7 +108,7 @@ plugin.onLangLoaded = function()
 	if(thePlugins.isInstalled("_getdir"))
 	{
 		//var btn = new theWebUI.rDirBrowser( 'dlg_relocate', 'rel_destination', 'btn_relocate_browse', 'frame_relocate_browse',true );
-		var btn = new theWebUI.rDirBrowser( 'dlg_relocate', 'rel_destination', 'btn_relocate_browse', null,false );
+		var btn = new theWebUI.rDirBrowser( 'dlg_relocate', 'path_edit', 'btn_relocate_browse', null,true );
 		theDialogManager.setHandler('dlg_relocate','afterHide',function()
 		{
 			btn.hide();
