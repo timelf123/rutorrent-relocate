@@ -101,7 +101,7 @@ plugin.onLangLoaded = function()
 			"</fieldset>" +
 			"<fieldset>" +
 				"<legend>"+theUILang.RelocateFrmDestCaption+"</legend>"+
-				"<input type='text' id='rel_destination' name='rel_destination' class='TextboxLarge' autocomplete='off'/>"+
+				"<input type='text' id='rel_destination' name='rel_destination' class='TextboxLarge' autocomplete='off' readonly='true'/>"+
 				"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
 				"<input type='hidden' name='rel_id' id='rel_id' />"+
 				"<input type='hidden' name='rel_fno' id='rel_fno' />"+
