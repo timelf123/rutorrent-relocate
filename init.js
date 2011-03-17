@@ -37,21 +37,19 @@ if(plugin.enabled)
 	
 	theWebUI.showRelocateDlg = function(dID,fno)
 	{
-		//document.forms['frmRelocate'].elements['id'].value = dID;
-		//document.forms['frmRelocate'].elements['fno'].value = fno;
-		$('#rel_id').val(dID);
-		$('#rel_fno').val(fno);
-			
-		theDialogManager.show( "dlg_relocate" );
-		
-		log(dID);
-		log(fno);
-		
 		var base_path = $.trim(this.torrents[dID].base_path);
 		
 		if (this.files[dID][fno].name && this.files[dID][fno].name != this.torrents[dID].name)
 			base_path = base_path + "/" + this.files[dID][fno].name;
 		
+		$('#rel_id').val(dID);
+		$('#rel_fno').val(fno);
+		$('#rel_source').val(base_path);
+			
+		theDialogManager.show( "dlg_relocate" );
+		
+		log(dID);
+		log(fno);		
 		log(base_path);
 	}
 	
@@ -93,8 +91,11 @@ plugin.onLangLoaded = function()
 	theDialogManager.make( 'dlg_relocate', theUILang.RelocateDlgCaption,
 		"<div class='cont fxcaret'>" +
 			"<fieldset>" +
-				//"<label id='lbl_relocate' for='rel_destination'>" + theUILang.RelocateFrmCaption + ": </label>" +
-				"<legend>"+theUILang.RelocateFrmCaption+"</legend>"+
+				"<legend>"+theUILang.RelocateFrmSourCaption+"</legend>"+
+				"<input type='text' id='rel_source' name='rel_source' class='TextboxLarge' autocomplete='off' readonly='true' />"+
+			"</fieldset>" +
+			"<fieldset>" +
+				"<legend>"+theUILang.RelocateFrmDestCaption+"</legend>"+
 				"<input type='text' id='rel_destination' name='rel_destination' class='TextboxLarge' autocomplete='off'/>"+
 				"<input type='button' id='btn_relocate_browse' class='Button' value='...' />" +
 				"<input type='hidden' name='rel_id' id='rel_id' />"+
