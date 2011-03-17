@@ -41,10 +41,10 @@ $source =  escape($_REQUEST['sourc']);
 
 function relocate($source, $dest) {
 	
-	if(isset($source) && isset(dest)) {
+	if(isset($source) && isset($dest)) {
 		
 		//return(shell_exec('ln -s "'.$source.'" '.$dest));
-		echo ('ln -s "'.$source.'" '.$dest);
+		echo ('ln -s '.$source.' '.$dest);
 		
 	}
 	
