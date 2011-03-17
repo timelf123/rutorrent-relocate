@@ -37,14 +37,21 @@ function escape($v){
 }
 
 $dest =  escape($_REQUEST['dest']);
+
 $source =  escape($_REQUEST['sourc']);
+
+if ($_REQUEST['force'] == 'on') {
+	$force =  '-f ';
+}else{
+	$force =  '';
+}
 
 function relocate($source, $dest) {
 	
 	if(isset($source) && isset($dest)) {
 		
 		//return(shell_exec('ln -s "'.$source.'" '.$dest));
-		echo ('ln -s '.$source.' '.$dest);
+		echo ('ln -s '.$force.$source.' '.$dest);
 		
 	}
 	
