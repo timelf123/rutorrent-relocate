@@ -30,7 +30,7 @@ echo relocate();*/
 	
 function escape($v){
 	
-	$a = {" ","'"};
+	$a = array(" ","'");
 	$v = str_replace($a,"\ ",$v);
 	return $v;
 	
