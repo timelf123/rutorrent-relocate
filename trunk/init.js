@@ -83,16 +83,16 @@ if(plugin.enabled)
 						sourc:sourc,
 						force:force
 					},
-				url : "plugins/relocate/action.php"/*,
+				url : "plugins/relocate/action.php",
 				success: function(data){
 					if (data == '') {
-						theDialogManager.hide("dlg_info");
-						askYesNo( theUILang.mediaError, theUILang.badMediaData, "" );
+						theDialogManager.hide("dlg_relocate");
+						//askYesNo( theUILang.mediaError, theUILang.badMediaData, "" );
 						return;
 					}
-					$("#media_info").html(data);
-					theDialogManager.center("dlg_info");
-				}*/
+					$("#rel_debug").html(data);
+					theDialogManager.center("dlg_relocate");
+				}
 			});
 	
 		}
