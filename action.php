@@ -27,9 +27,17 @@ function relocate() {
 return false;
 }
 echo relocate();*/
+	
+function escape($v){
+	
+	$a = {" ","'"};
+	$v = str_replace($a,$v);
+	return $v;
+	
+}
 
 	echo $_REQUEST['id'];
 	echo $_REQUEST['fno'];
-	echo escapeshellarg($_REQUEST['dest']);
+	echo escape($_REQUEST['dest']);
 	
 ?>

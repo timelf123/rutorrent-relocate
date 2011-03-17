@@ -56,9 +56,13 @@ if(plugin.enabled)
 	theWebUI.sendRelocate = function()
 	{
 			
-		var id = $('#rel_id').val();
-		var fno = $('#rel_fno').val();
-		var dest = $('#rel_destination').val();
+		var id 		= $('#rel_id').val();
+		var fno 	= $('#rel_fno').val();
+		
+		var dest 	= $('#rel_destination').val();
+		//dest 		= $.trim(dest).replace(/\'/g, "\\'")
+		//dest 		= $.trim(dest).replace(/\s/g, "\\'")
+		var sourc	= $('#rel_source').val();
 		
 		var AjaxReq = jQuery.ajax({
 			type: "POST",
@@ -69,7 +73,8 @@ if(plugin.enabled)
 			data: {
 					id:id,
 					fno:fno,
-					dest:dest
+					dest:dest,
+					sourc:sourc
 				},
 			url : "plugins/relocate/action.php"/*,
 			success: function(data){
