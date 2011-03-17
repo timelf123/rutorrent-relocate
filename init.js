@@ -48,9 +48,9 @@ if(plugin.enabled)
 			
 		theDialogManager.show( "dlg_relocate" );
 		
-		log(dID);
-		log(fno);		
-		log(base_path);
+		//log(dID);
+		//log(fno);		
+		//log(base_path);
 	}
 	
 	theWebUI.sendRelocate = function()
