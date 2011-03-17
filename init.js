@@ -109,6 +109,10 @@ plugin.onLangLoaded = function()
 				"<legend>"+theUILang.RelocateFrmOptions+"</legend>"+
 				"<input type='checkbox' id='rel_force' name='rel_force' /> Force"+
 			"</fieldset>" +
+			"<fieldset>" +
+				"<legend>"+theUILang.RelocateFrmDebug+"</legend>"+
+				"<div id='debug'></div>"+
+			"</fieldset>" +
 		"</div>"+
 		"<div class='aright buttons-list'>" +
 			"<input type='button' value='" + theUILang.ok + "' class='OK Button' id='btn_relocate_ok'" +

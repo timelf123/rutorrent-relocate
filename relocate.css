@@ -11,3 +11,5 @@ div#dlg_relocate br {clear: left; line-height: 0}
 #btn_relocate_browse {width:30px}
 
 div#dlg_relocate div.dlg-header {background-image: url(../../images/settings.gif)}
+
+div#dlg_relocate div.debug {height: 30px; color:red;}
