@@ -31,7 +31,7 @@ echo relocate();*/
 function escape($v){
 	
 	$a = {" ","'"};
-	$v = str_replace($a,$v);
+	$v = str_replace($a,"\ ",$v);
 	return $v;
 	
 }
