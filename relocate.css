@@ -1,4 +1,4 @@
-div#dlg_relocate {width: 310px; height: auto; overflow: visible}
+div#dlg_relocate {width: 450px; height: auto; overflow: visible}
 
 div#dlg_relocate fieldset div {line-height: 16px}
 div#dlg_relocate fieldset div.props-spacer {width: 90%; float: left}
@@ -13,3 +13,5 @@ div#dlg_relocate br {clear: left; line-height: 0}
 div#dlg_relocate div.dlg-header {background-image: url(../../images/settings.gif)}
 
 div#dlg_relocate div.debug {height: auto; max-height: 50px; color:red;}
+
+div#dlg_relocate .Imput {width: 360px; min-height: 200px;}
