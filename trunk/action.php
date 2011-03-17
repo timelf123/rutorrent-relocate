@@ -36,8 +36,21 @@ function escape($v){
 	
 }
 
-	echo $_REQUEST['id'];
-	echo $_REQUEST['fno'];
-	echo escape($_REQUEST['dest']);
+$dest =  escape($_REQUEST['dest']);
+$source =  escape($_REQUEST['sourc']);
+
+function relocate($source, $dest) {
+	
+	if(isset($source) && isset(dest)) {
+		
+		//return(shell_exec('ln -s "'.$source.'" '.$dest));
+		echo ('ln -s "'.$source.'" '.$dest);
+		
+	}
+	
+	return false;
+}
+
+echo relocate($source, $dest);
 	
 ?>
