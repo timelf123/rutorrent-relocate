@@ -63,6 +63,7 @@ if(plugin.enabled)
 		var dest 	= $('#rel_destination').val();
 		var sourc	= $('#rel_source').val();
 		var force	= $('#rel_force').val();
+		var recheck	= $('#rel_recheck').val();
 		
 		if (dest == "" || sourc == "") {
 			
@@ -90,6 +91,11 @@ if(plugin.enabled)
 					if (data == '') {
 						theDialogManager.hide("dlg_relocate");
 						//askYesNo( theUILang.mediaError, theUILang.badMediaData, "" );
+						
+						if (recheck == 'on') {
+							theWebUI.recheck();
+						}
+						
 						return;
 					}
 					$("#rel_debug").html(data);
@@ -119,7 +125,8 @@ plugin.onLangLoaded = function()
 			"</fieldset>" +
 			"<fieldset>" +
 				"<legend>"+theUILang.RelocateFrmOptions+"</legend>"+
-				"<input type='checkbox' id='rel_force' name='rel_force' /> Force"+
+				"<input type='checkbox' id='rel_force' name='rel_force' /> Force (remove existing destination files)"+
+				"<input type='checkbox' id='rel_recheck' name='rel_recheck' /> Recheck Torrent"+
 			"</fieldset>" +
 			"<fieldset>" +
 				"<legend>"+theUILang.RelocateFrmDebug+"</legend>"+
