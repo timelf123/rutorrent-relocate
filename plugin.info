@@ -1,5 +1,5 @@
 plugin.description: The plug-in is intended for relocating torrent files.
 plugin.author: SchattenMann
-plugin.version: 0.0.1
+plugin.version: 0.1
 plugin.runlevel: 11
 rtorrent.remote: error
