@@ -1,0 +1,17 @@
+div#dlg_relocate {width: 450px; height: auto; overflow: visible}
+
+div#dlg_relocate fieldset div {line-height: 16px}
+div#dlg_relocate fieldset div.props-spacer {width: 90%; float: left}
+
+div#dlg_relocate label {width: 120px; vertical-align: middle; margin-top: 5px; margin-bottom: 5px; margin-left: 10px; }
+div#dlg_relocate input {vertical-align: middle; margin-top: 5px; margin-bottom: 5px;}
+
+div#dlg_relocate br {clear: left; line-height: 0}
+
+#btn_relocate_browse {width:30px}
+
+div#dlg_relocate div.dlg-header {background-image: url(../../images/settings.gif)}
+
+div#dlg_relocate div.debug {height: auto; max-height: 50px; color:red;}
+
+div#dlg_relocate .RelFields {width: 360px;}
