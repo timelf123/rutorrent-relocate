@@ -125,8 +125,8 @@ plugin.onLangLoaded = function()
 			"</fieldset>" +
 			"<fieldset>" +
 				"<legend>"+theUILang.RelocateFrmOptions+"</legend>"+
-				"<input type='checkbox' id='rel_force' name='rel_force' /> Force (remove existing destination files)"+
-				"<input type='checkbox' id='rel_recheck' name='rel_recheck' /> Recheck Torrent"+
+				"<input type='checkbox' id='rel_force' name='rel_force' /> Force (remove existing destination files) < /br>"+
+				"<input type='checkbox' id='rel_recheck' name='rel_recheck' /> Recheck Torrent </br>"+
 			"</fieldset>" +
 			"<fieldset>" +
 				"<legend>"+theUILang.RelocateFrmDebug+"</legend>"+
