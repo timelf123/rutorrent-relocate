@@ -62,8 +62,8 @@ if(plugin.enabled)
 		var fno 	= $('#rel_fno').val();
 		var dest 	= $('#rel_destination').val();
 		var sourc	= $('#rel_source').val();
-		var force	= $('#rel_force').val();
-		var recheck	= $('#rel_recheck').val();
+		var force	= $$('#rel_force').checked;
+		var recheck	= $$('rel_recheck').checked
 		
 		if (dest == "" || sourc == "") {
 			
@@ -92,7 +92,7 @@ if(plugin.enabled)
 						theDialogManager.hide("dlg_relocate");
 						//askYesNo( theUILang.mediaError, theUILang.badMediaData, "" );
 						
-						if (recheck == 'on') {
+						if (recheck) {
 							theWebUI.recheck();
 						}
 						
