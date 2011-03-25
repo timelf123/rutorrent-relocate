@@ -62,7 +62,7 @@ if(plugin.enabled)
 		var fno 	= $('#rel_fno').val();
 		var dest 	= $('#rel_destination').val();
 		var sourc	= $('#rel_source').val();
-		var force	= $$('#rel_force').checked;
+		var force	= $$('rel_force').checked;
 		var recheck	= $$('rel_recheck').checked
 		
 		if (dest == "" || sourc == "") {
