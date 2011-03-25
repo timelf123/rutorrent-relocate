@@ -54,7 +54,7 @@ function relocate($source, $dest, $args) {
 	if(isset($source) && isset($dest)) {
 		
 		return(shell_exec("ln -s".$args." '".$dest."' '".$source."'"));
-		//echo ("ln -s".$args." '".$dest."' '".$source."'");
+		echo ("Success: ln -s".$args." '".$dest."' '".$source."'");
 		
 	}
 	
